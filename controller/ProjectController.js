@@ -1,4 +1,4 @@
-const Project = require('../models/Project');
+const Project = require("../models/Project");
 
 // Fetch all projects
 const getAllProjects = async (req, res) => {
@@ -12,11 +12,14 @@ const getAllProjects = async (req, res) => {
 
 // Add a new project
 const addProject = async (req, res) => {
-  const { title, description, tech, link, liveDemo, category, subCategory } = req.body;
+  const { title, description, tech, link, liveDemo, category, subCategory } =
+    req.body;
 
   // Validate required fields
   if (!title || !description || !tech || !link || !category) {
-    return res.status(400).json({ message: "All required fields must be provided." });
+    return res
+      .status(400)
+      .json({ message: "All required fields must be provided." });
   }
 
   try {
@@ -40,7 +43,8 @@ const addProject = async (req, res) => {
 // Update an existing project
 const updateProject = async (req, res) => {
   const { id } = req.params;
-  const { title, description, tech, link, liveDemo, category, subCategory } = req.body;
+  const { title, description, tech, link, liveDemo, category, subCategory } =
+    req.body;
 
   try {
     const updatedProject = await Project.findByIdAndUpdate(

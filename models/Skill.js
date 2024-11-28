@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const skillSchema = new mongoose.Schema({
   name: {
@@ -13,7 +13,7 @@ const skillSchema = new mongoose.Schema({
   },
   level: {
     type: String,
-    enum: ['Beginner', 'Intermediate', 'Advanced'],
+    enum: ["Beginner", "Intermediate", "Advanced"],
     required: true,
   },
   icon: {
@@ -22,6 +22,6 @@ const skillSchema = new mongoose.Schema({
   },
 });
 
-const Skill = mongoose.model('Skill', skillSchema);
+const Skill = mongoose.model("Skill", skillSchema);
 
 module.exports = Skill;

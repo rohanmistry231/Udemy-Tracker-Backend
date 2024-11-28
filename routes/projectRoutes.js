@@ -1,23 +1,23 @@
-const express = require('express');
+const express = require("express");
 const {
   getAllProjects,
   addProject,
   updateProject,
   deleteProject,
-} = require('../controller/ProjectController');
+} = require("../controller/ProjectController");
 
 const router = express.Router();
 
 // Route to fetch all projects
-router.get('/', getAllProjects);
+router.get("/", getAllProjects);
 
 // Route to add a new project
-router.post('/', addProject);
+router.post("/", addProject);
 
 // Route to update an existing project by ID
-router.put('/:id', updateProject);
+router.put("/:id", updateProject);
 
 // Route to delete a project by ID
-router.delete('/:id', deleteProject);
+router.delete("/:id", deleteProject);
 
 module.exports = router;
